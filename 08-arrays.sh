@@ -2,6 +2,7 @@
 
 friends=("hari" "aditya" "rakesh" "manoj" "raza")
 
-echo "first friend= ${friends[0]}"
+echo "first friend= ${friends(0)}"
+
 
 
