@@ -24,6 +24,7 @@ sum3=$((($NUMBER1+$NUMBER2+$NUMBER3)))
 echo " sum of any three is = $sum3"
 
 sum4=$((($NUMBER1+$NUMBER2)))
-echo "sum of one and two is = $sum4
+echo "sum of one and two is = $sum4"
 
-echo "mandy=$NUMBER1
+echo "mandy=$NUMBER1"
+echo "karanam=123"
