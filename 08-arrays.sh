@@ -10,6 +10,6 @@ echo "clg frnds= ${friends[@]:2:3}"
 
 echo "home frnd= ${friends[0]} ${friends[2]} ${friends[4]}"
 
-frnd1=hari
+frnd=hari
 
-echo "my frnd = $frnd1"
+echo "my frnd = $frnd"
