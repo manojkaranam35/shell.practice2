@@ -12,4 +12,4 @@ echo "home frnd= ${friends[0]} ${friends[2]} ${friends[4]}"
 
 frnd1=hari
 
-echo "my frnd = $frnd1
+echo "my frnd = $frnd1"
