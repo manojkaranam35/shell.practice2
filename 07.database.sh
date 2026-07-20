@@ -2,9 +2,18 @@
 
 NUMBER1=100
 NUMBER2=200
+NUMBER3=300
+NUMBER4=400
+
 
 TIMESTAMP=$(date)
 echo "script executed at = $TIMESTAMP"
 
 SUM=$(($NUMBER1+$NUMBER2))
 echo "sum of $NUMBER1 & $NUMBER2 is = $SUM"
+
+SUM1=$(($NUMBER1+$NUMBER3))
+echo " sum of $NUMBER1 & $NUMBER2 is = $SUM1"
+
+SUM2=$(($NUMBER2+$NUMBER4))
+echo " sum of $NUMBER2 & NUMBER4 is = $sum2"
