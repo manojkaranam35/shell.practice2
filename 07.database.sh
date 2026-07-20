@@ -13,7 +13,9 @@ SUM=$(($NUMBER1+$NUMBER2))
 echo "sum of $NUMBER1 & $NUMBER2 is = $SUM"
 
 SUM1=$(($NUMBER1+$NUMBER3))
-echo " sum of $NUMBER1 & $NUMBER2 is = $SUM1"
+echo " sum of $NUMBER1 & $NUMBER3 is = $SUM1"
 
 SUM2=$(($NUMBER2+$NUMBER4))
-echo " sum of $NUMBER2 & NUMBER4 is = $sum2"
+echo " sum of $NUMBER2 & $NUMBER4 is = $SUM2"
+
+echo "manoj:hi "
