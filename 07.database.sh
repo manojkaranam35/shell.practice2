@@ -19,3 +19,6 @@ SUM2=$(($NUMBER2+$NUMBER4))
 echo " sum of $NUMBER2 & $NUMBER4 is = $SUM2"
 
 echo "manoj:hi "
+
+sum3=$(($NUMBER1+NUMBER2+NUMBER3))
+echo " sum of any three is = $sum3"
