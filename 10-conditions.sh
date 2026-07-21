@@ -14,11 +14,10 @@ else
     echo "Given number $NUMBER is not less than 10"
 fi
 
-NUMBER1=$1
 
-IF [ $NUMBER1 -lt 15]
+IF [ $NUMBER -lt 15]
 then
-    echo "given number $NUMBER1 is less then 15"
+    echo "given number $NUMBER is less then 15"
 else 
-    echo "given number $NUMBER1 is not less then 15"
+    echo "given number $NUMBER is not less then 15"
 fi
