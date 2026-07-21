@@ -8,3 +8,4 @@ echo "Current Directory: $PWD"
 echo "User running this script: $USER"
 echo "Home directory of user: $HOME"
 echo "PID of the script: $$"
+sleep 10 &
