@@ -1,6 +1,6 @@
 #!/bin/bash
 
-number= 15
+number=15
 
 if [$number -lt 20]
 then 
