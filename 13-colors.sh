@@ -10,7 +10,7 @@ if [ $userid -ne 0 ]
 then
   echo "show $R error...run the script with root access $N"
   exit 1
-  else "you are running the script with root $Y access $n"
+  else "you are running the script with root $Y access $N"
   fi
 
 VALIDATE(){
