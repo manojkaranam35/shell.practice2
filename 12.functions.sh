@@ -54,7 +54,7 @@ if [ $? -ne 0 ]
 then
   echo " httpd not installed...going to install"
   dnf install httpd
-validate $? "httpd"
+VALIDATE $? "httpd"
 else
 echo "httpd already installed...nothing to do"
 fi
