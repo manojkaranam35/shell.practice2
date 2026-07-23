@@ -10,31 +10,31 @@ else
 fi
 
 VALIDATE(){
-if [ $1 -eq 0 ]
-then
-   echo "installing $2 is..success"
-else
-   echo "installing $2 is...failure"
- exit 1
- fi
+    if [ $1 -eq 0 ]
+    then
+        echo "Installing $2 is ... SUCCESS"
+    else
+        echo "Installing $2 is ... FAILURE"
+        exit 1
+    fi
 }
 
-dnf lint installed mysql
+dnf list installed mysql
 if [ $? -ne 0 ]
 then
-   echo "mysql not installed...going to istall"
-   dnf install mysql -y
-   VALIDATE $? "mysql"
+    echo "MySQL is not installed... going to install it"
+    dnf install mysql -y
+    VALIDATE $? "MySQL"
 else
-   echo "mysql already installed..nothing to do"
+    echo "MySQL is already installed...Nothing to do"
 fi
 
-dnf lint installed pytho3
+dnf list installed python3
 if [ $? -ne 0 ]
 then
-   echo "pytho3 not installed...going to istall"
-   dnf install pytho3 -y
-   VALIDATE $? "pytho3"
+    echo "python3 is not installed... going to install it"
+    dnf install python3 -y
+    VALIDATE $? "python3"
 else
-   echo "pytho3 already installed..nothing to do"
+    echo "python3 is already installed...Nothing to do"
 fi
