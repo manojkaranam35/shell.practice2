@@ -29,12 +29,12 @@ else
    echo "mysql already installed..nothing to do"
 fi
 
-dnf list installed pytho3
+dnf list installed python3
 if [ $? -ne 0 ]
 then
-   echo "pytho3 not installed...going to istall"
-   dnf install pytho3 -y
-   VALIDATE $? "pytho3"
+   echo "python3 not installed...going to istall"
+   dnf install python3 -y
+   VALIDATE $? "python3"
 else
-   echo "pytho3 already installed..nothing to do"
+   echo "python3 already installed..nothing to do"
 fi
