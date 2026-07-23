@@ -1,51 +1,56 @@
 #!/bin/bash
 
-userid=$(id -u)
+USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-if [ $userid -ne 0 ]
+if [ $USERID -ne 0 ]
 then
-  echo "show $R error...run the script with root access $N"
-  exit 1
-  else "you are running the script with root $Y access $N"
-  fi
+    echo -e "$R ERROR:: Please run this script with root access $N"
+    exit 1 #give other than 0 upto 127
+else
+    echo "You are running with root access"
+fi
 
+# validate functions takes input as exit status, what command they tried to install
 VALIDATE(){
-if [ $1 -eq 0 ]
-then
-  echo "installing $2 is $G success $N"
-else 
-  echo "installing $2 is $R failure $N"
-  fi
+    if [ $1 -eq 0 ]
+    then
+        echo -e "Installing $2 is ... $G SUCCESS $N"
+    else
+        echo -e "Installing $2 is ... $R FAILURE $N"
+        exit 1
+    fi
 }
 
 dnf list installed mysql
 if [ $? -ne 0 ]
 then
-  echo "mysql $R not installed $N..$G going to install $N"
-  dnf install mysql
-  VALIDATE $? "mysql"
+    echo "MySQL is not installed... going to install it"
+    dnf install mysql -y
+    VALIDATE $? "MySQL"
 else
-  echo "mysql already installed..$Y nothing to do $N"
+    echo -e "Nothing to do MySQL... $Y already installed $N"
 fi
+
+dnf list installed python3
+if [ $? -ne 0 ]
+then
+    echo "python3 is not installed... going to install it"
+    dnf install python3 -y
+    VALIDATE $? "python3"
+else
+    echo -e "Nothing to do python... $Y already installed $N"
+fi
+
 dnf list installed nginx
 if [ $? -ne 0 ]
 then
-  echo "nginx $R not installed $N..$G going to install $N"
-  dnf install nginx
-  VALIDATE $? "nginx"
+    echo "nginx is not installed... going to install it"
+    dnf install nginx -y
+    VALIDATE $? "nginx"
 else
-  echo "nginx already installed..$Y nothing to do $N"
-fi
-dnf list installed httpd
-if [ $? -ne 0 ]
-then
-  echo "httpd $R not installed $N..$G going to install $N"
-  dnf install httpd
-  VALIDATE $? "httpd"
-else
-  echo "httpd already installed..$Y nothing to do $N"
+    echo -e "Nothing to do nginx... $Y already installed $N"
 fi
