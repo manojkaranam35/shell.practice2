@@ -12,10 +12,10 @@ fi
 VALIDATE(){
 if [ $1 -eq 0 ]
 then
-   echo "installing $1 is..success"
+   echo "installing $2 is..success"
 else
-   echo "installing $1 is...failure"
- exit1
+   echo "installing $2 is...failure"
+ exit 1
  fi
 }
 
