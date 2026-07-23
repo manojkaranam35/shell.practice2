@@ -28,3 +28,13 @@ then
 else
    echo "mysql already installed..nothing to do"
 fi
+
+dnf lint installed pytho3
+if [ $? -ne 0 ]
+then
+   echo "pytho3 not installed...going to istall"
+   dnf install pytho3 -y
+   VALIDATE $? "pytho3"
+else
+   echo "pytho3 already installed..nothing to do"
+fi
