@@ -1,8 +1,8 @@
 #!/bin/bash
 
-userid= $(id -u)
+userid=$(id -u)
 
-if [$userid -ne 0]
+if [ $userid -ne 0 ]
 then 
 echo "error: Please run this script with root access" 
 else
