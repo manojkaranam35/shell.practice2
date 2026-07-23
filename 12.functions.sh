@@ -1,6 +1,6 @@
 #!/bin/bash
 
-userid=(id -u)
+userid=$(id -u)
 
 if [ $userid -ne 0 ]
 then
@@ -24,7 +24,7 @@ if [ $? -ne 0 ]
 then
    echo "mysql not installed...going to istall"
    dnf install mysql -y
-   VALIDAT $? "mysql"
+   VALIDATE $? "mysql"
 else
    echo "mysql already installed..nothing to do"
 fi
