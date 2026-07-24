@@ -14,7 +14,7 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
-if [ $userid -ne 0]
+if [ $userid -ne 0 ]
 then 
   echo -e "show $R error...run the script with root user $N" | tee -a $LOG_FILE
   exit 1
@@ -33,7 +33,7 @@ VALIDATE(){
 }
 
 dnf list installed mysql &>>$LOG_FILE
-IF [$? -ne 0]
+IF [ $? -ne 0 ]
 then 
   echo "mysql not installed.. $G going to install $N " | tee -a $LOG_FILE 
   dnf install mysql -Y &>>$LOG_FILE
@@ -43,7 +43,7 @@ else
 fi
 
 dnf list installed nginx &>>$LOG_FILE
-IF [$? -ne 0]
+IF [ $? -ne 0 ]
 then 
   echo "nginx not installed.. $G going to install $N " | tee -a $LOG_FILE 
   dnf install nginx -Y &>>$LOG_FILE
@@ -53,7 +53,7 @@ else
 fi
 
 dnf list installed httpd &>>$LOG_FILE
-IF [$? -ne 0]
+IF [ $? -ne 0 ]
 then 
   echo "httpd not installed.. $G going to install $N " | tee -a $LOG_FILE 
   dnf install httpd -Y &>>$LOG_FILE
