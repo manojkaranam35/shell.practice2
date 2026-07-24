@@ -36,7 +36,7 @@ dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
   echo -e "mysql not installed.. $G going to install $N " | tee -a $LOG_FILE 
-  dnf install mysql -Y &>>$LOG_FILE
+  dnf install mysql -y &>>$LOG_FILE
   VALIDATE $? "mysql"
 else
   echo -e " $Y mysql already installed...nothing to do $N" | tee -a $LOG_FILE 
@@ -46,7 +46,7 @@ dnf list installed nginx &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
   echo -e "nginx not installed.. $G going to install $N " | tee -a $LOG_FILE 
-  dnf install nginx -Y &>>$LOG_FILE
+  dnf install nginx -y &>>$LOG_FILE
   VALIDATE $? "nginx"
 else
   echo -e " $Y nginx already installed...nothing to do $N" | tee -a $LOG_FILE 
@@ -56,7 +56,7 @@ dnf list installed httpd &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
   echo -e "httpd not installed.. $G going to install $N " | tee -a $LOG_FILE 
-  dnf install httpd -Y &>>$LOG_FILE
+  dnf install httpd -y &>>$LOG_FILE
   VALIDATE $? "httpd"
 else
   echo -e " $Y httpd already installed...nothing to do $N" | tee -a $LOG_FILE 
