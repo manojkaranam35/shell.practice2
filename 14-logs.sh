@@ -23,7 +23,7 @@ else
 fi
 
 VALIDATE(){
-    if [ $1 -eq 0 ]
+ if [ $1 -eq 0 ]
     then
         echo -e "Installing $2 is ... $G SUCCESS $N" | tee -a $LOG_FILE
     else
@@ -33,7 +33,7 @@ VALIDATE(){
 }
 
 dnf list installed mysql &>>$LOG_FILE
-IF [ $? -ne 0 ]
+if [ $? -ne 0 ]
 then 
   echo "mysql not installed.. $G going to install $N " | tee -a $LOG_FILE 
   dnf install mysql -Y &>>$LOG_FILE
@@ -43,7 +43,7 @@ else
 fi
 
 dnf list installed nginx &>>$LOG_FILE
-IF [ $? -ne 0 ]
+if [ $? -ne 0 ]
 then 
   echo "nginx not installed.. $G going to install $N " | tee -a $LOG_FILE 
   dnf install nginx -Y &>>$LOG_FILE
@@ -53,7 +53,7 @@ else
 fi
 
 dnf list installed httpd &>>$LOG_FILE
-IF [ $? -ne 0 ]
+if [ $? -ne 0 ]
 then 
   echo "httpd not installed.. $G going to install $N " | tee -a $LOG_FILE 
   dnf install httpd -Y &>>$LOG_FILE
