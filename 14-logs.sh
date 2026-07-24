@@ -35,29 +35,29 @@ VALIDATE(){
 dnf list installed mysql &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
-  echo "mysql not installed.. $G going to install $N " | tee -a $LOG_FILE 
+  echo -e "mysql not installed.. $G going to install $N " | tee -a $LOG_FILE 
   dnf install mysql -Y &>>$LOG_FILE
   VALIDATE $? "mysql"
 else
-  echo " $Y mysql already installed...nothing to do $N" | tee -a $LOG_FILE 
+  echo -e " $Y mysql already installed...nothing to do $N" | tee -a $LOG_FILE 
 fi
 
 dnf list installed nginx &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
-  echo "nginx not installed.. $G going to install $N " | tee -a $LOG_FILE 
+  echo -e "nginx not installed.. $G going to install $N " | tee -a $LOG_FILE 
   dnf install nginx -Y &>>$LOG_FILE
   VALIDATE $? "nginx"
 else
-  echo " $Y nginx already installed...nothing to do $N" | tee -a $LOG_FILE 
+  echo -e " $Y nginx already installed...nothing to do $N" | tee -a $LOG_FILE 
 fi
 
 dnf list installed httpd &>>$LOG_FILE
 if [ $? -ne 0 ]
 then 
-  echo "httpd not installed.. $G going to install $N " | tee -a $LOG_FILE 
+  echo -e "httpd not installed.. $G going to install $N " | tee -a $LOG_FILE 
   dnf install httpd -Y &>>$LOG_FILE
   VALIDATE $? "httpd"
 else
-  echo " $Y httpd already installed...nothing to do $N" | tee -a $LOG_FILE 
+  echo -e " $Y httpd already installed...nothing to do $N" | tee -a $LOG_FILE 
 fi
